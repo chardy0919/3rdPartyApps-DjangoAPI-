@@ -59,8 +59,12 @@ class Jokes_Api(APIView):
 
         endpoint = "https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes"
 
+        env =   dotenv_values(".env")
+
+        jokekey = env.get('JOKEKEY')
+
         headers = {
-	        "X-RapidAPI-Key": "30259b44b5msh77c088796f8d551p165f73jsn186537819039",
+	        "X-RapidAPI-Key": jokekey,
 	        "X-RapidAPI-Host": "jokes-by-api-ninjas.p.rapidapi.com"
         }
 
